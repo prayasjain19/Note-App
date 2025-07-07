@@ -86,7 +86,7 @@ export default function Dashboard() {
             <div className="mb-6 max-w-xl mx-auto">
                 <button
                     onClick={() => navigate('/create-note')}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-sm font-semibold"
+                    className="w-full bg-[#367AFF] hover:bg-blue-600 text-white py-3 rounded-lg text-sm font-semibold"
                 >
                     Create Note
                 </button>

@@ -50,7 +50,7 @@ export default function CreateNote() {
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-semibold"
+                        className="w-full bg-[#367AFF] hover:bg-blue-600 text-white py-2 rounded font-semibold"
                     >
                         Save Note
                     </button>

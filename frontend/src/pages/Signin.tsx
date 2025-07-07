@@ -105,7 +105,7 @@ export default function Signin() {
                                         <button
                                             type="button"
                                             onClick={onGetOtp}
-                                            className="text-blue-600 font-medium hover:underline"
+                                            className="text-[#367AFF] font-medium hover:underline"
                                         >
                                             Resend OTP
                                         </button>
@@ -129,14 +129,14 @@ export default function Signin() {
                                 <button
                                     type="button"
                                     onClick={onGetOtp}
-                                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-sm font-semibold"
+                                    className="w-full bg-[#367AFF] hover:bg-blue-600 text-white py-3 rounded-lg text-sm font-semibold"
                                 >
                                     Get OTP
                                 </button>
                             ) : (
                                 <button
                                     type="submit"
-                                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-sm font-semibold"
+                                    className="w-full bg-[#367AFF] hover:bg-blue-600 text-white py-3 rounded-lg text-sm font-semibold"
                                 >
                                     Sign in
                                 </button>
@@ -145,7 +145,7 @@ export default function Signin() {
                             {/* Signup Link */}
                             <p className="text-sm text-gray-500 text-center mt-4">
                                 Need an account?{' '}
-                                <a href="/signup" className="text-blue-600 font-medium hover:underline">Create one</a>
+                                <a href="/signup" className="text-[#367AFF] font-medium hover:underline">Create one</a>
                             </p>
                         </form>
                     </div>
