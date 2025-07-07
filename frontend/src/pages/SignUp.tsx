@@ -93,6 +93,7 @@ export default function Signup() {
                             <input
                                 {...register('dateOfBirth', { required: true })}
                                 type="date"
+                                placeholder="Date of Birth"
                                 className="w-full border border-gray-300 px-4 py-3 rounded-lg text-sm focus:outline-blue-500"
                             />
                             {errors.dateOfBirth && <p className="text-sm text-red-500">Date of Birth is required</p>}
