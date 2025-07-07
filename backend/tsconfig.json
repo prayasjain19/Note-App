@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "lib": ["ES2020", "DOM"], // Ensure this is present and includes "DOM"
+    "typeRoots": ["./node_modules/@types"], // THIS IS CRITICAL: ONLY node_modules/@types
+    // "types": ["node", "express"], // <-- THIS LINE MUST BE DELETED or COMMENTED OUT
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"] // Add this to explicitly tell TypeScript what to include
+}
