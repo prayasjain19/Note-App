@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = 'https://note-app-backend-vg9k.onrender.com/api/auth';
+const API = 'http://localhost:5000/api/auth';
 
 export const authService = {
     signup: (data: { name: string; email: string; dateOfBirth: string }) =>
@@ -13,5 +13,5 @@ export const authService = {
         axios.post(`${API}/signin`, data),
 
     googleLogin: (data: { token: string }) =>
-        axios.post('http://localhost:5000/api/auth/google-login', data),
+        axios.post(`${API}/google-login`, data),
 };
