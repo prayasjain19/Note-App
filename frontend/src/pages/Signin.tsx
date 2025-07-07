@@ -41,7 +41,10 @@ export default function Signin() {
 
     const onSubmit = async (data: SigninFormData) => {
         try {
-            const res = await authService.verifyOtp({ email: data.email, otp: data.otp! });
+            const res = await authService.verifyOtp({
+                email: data.email,
+                otp: data.otp!,
+            });
             localStorage.setItem('jwt_token', res.data.token);
             localStorage.setItem('user_email', res.data.email);
             localStorage.setItem('user_name', res.data.name);
@@ -54,31 +57,44 @@ export default function Signin() {
 
     return (
         <div className="min-h-screen bg-white">
-            {/* Top Header */}
             <div className="p-6 flex justify-center md:justify-start items-center">
                 <img src="/icon.png" alt="HD Logo" className="w-6 h-6 mr-2" />
                 <span className="text-lg font-semibold tracking-wide">HD</span>
             </div>
 
-            {/* Center Card */}
             <div className="flex justify-center items-center px-4">
                 <div className="w-full max-w-6xl flex flex-col md:flex-row rounded-xl shadow overflow-hidden">
-                    {/* Left: Form */}
                     <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
-                        <h2 className="text-3xl font-bold mb-1 text-center md:text-left">Sign in</h2>
-                        <p className="text-gray-400 mb-6 text-center md:text-left">Please login to continue to your account.</p>
+                        <h2 className="text-3xl font-bold mb-1 text-center md:text-left">
+                            Sign in
+                        </h2>
+                        <p className="text-gray-400 mb-6 text-center md:text-left">
+                            Please login to continue to your account.
+                        </p>
 
-                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                             {/* Email */}
-                            <input
-                                {...register('email', {
-                                    required: true,
-                                    pattern: /^\S+@\S+\.\S+$/,
-                                })}
-                                placeholder="Email"
-                                className="w-full border-2 border-blue-500 px-4 py-3 rounded-lg text-sm focus:outline-blue-500"
-                            />
-                            {errors.email && <p className="text-sm text-red-500">Valid email required</p>}
+                            <div className="relative">
+                                <input
+                                    {...register('email', {
+                                        required: true,
+                                        pattern: /^\S+@\S+\.\S+$/,
+                                    })}
+                                    type="email"
+                                    placeholder=" "
+                                    id="email"
+                                    className="peer w-full border border-gray-300 px-4 pt-5 pb-2 rounded-lg text-sm focus:outline-blue-500"
+                                />
+                                <label
+                                    htmlFor="email"
+                                    className="absolute left-4 top-2 text-gray-400 text-xs transition-all  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500"
+                                >
+                                    Email
+                                </label>
+                                {errors.email && (
+                                    <p className="text-sm text-red-500">Valid email required</p>
+                                )}
+                            </div>
 
                             {/* OTP - only if sent */}
                             {otpSent && (
@@ -87,9 +103,17 @@ export default function Signin() {
                                         <input
                                             {...register('otp', { required: true })}
                                             type={showOtp ? 'text' : 'password'}
-                                            placeholder="OTP"
-                                            className="w-full border border-gray-300 px-4 py-3 pr-10 rounded-lg text-sm focus:outline-blue-500"
+                                            placeholder=" "
+                                            id="otp"
+                                            className="peer w-full border border-gray-300 px-4 pt-5 pb-2 pr-10 rounded-lg text-sm focus:outline-blue-500"
                                         />
+                                        <label
+                                            htmlFor="otp"
+                                            className="absolute left-4 top-2 text-gray-400 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500"
+                                        >
+                                            Enter OTP
+                                        </label>
+                                        {/* Show/Hide button */}
                                         <button
                                             type="button"
                                             onClick={() => setShowOtp(!showOtp)}
@@ -97,7 +121,10 @@ export default function Signin() {
                                         >
                                             {showOtp ? <EyeOff size={18} /> : <Eye size={18} />}
                                         </button>
-                                        {errors.otp && <p className="text-sm text-red-500 mt-1">OTP is required</p>}
+
+                                        {errors.otp && (
+                                            <p className="text-sm text-red-500 mt-1">OTP is required</p>
+                                        )}
                                     </div>
 
                                     {/* Resend OTP */}
@@ -119,7 +146,9 @@ export default function Signin() {
                                             onChange={(e) => setRememberMe(e.target.checked)}
                                             className="accent-blue-600"
                                         />
-                                        <label className="text-sm text-gray-700">Keep me logged in</label>
+                                        <label className="text-sm text-gray-700">
+                                            Keep me logged in
+                                        </label>
                                     </div>
                                 </>
                             )}
@@ -145,12 +174,17 @@ export default function Signin() {
                             {/* Signup Link */}
                             <p className="text-sm text-gray-500 text-center mt-4">
                                 Need an account?{' '}
-                                <a href="/signup" className="text-[#367AFF] font-medium hover:underline">Create one</a>
+                                <a
+                                    href="/signup"
+                                    className="text-[#367AFF] font-medium hover:underline"
+                                >
+                                    Create one
+                                </a>
                             </p>
                         </form>
                     </div>
 
-                    {/* Right: Image */}
+                    {/* Right Image */}
                     <div className="hidden md:block w-1/2">
                         <img
                             src="/signup-image.png"
