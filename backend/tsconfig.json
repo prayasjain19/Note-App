@@ -5,7 +5,7 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "lib": ["ES2020", "DOM"], // Ensure this is present and includes "DOM"
-    "typeRoots": ["./node_modules/@types"], // THIS IS CRITICAL: ONLY node_modules/@types
+    "typeRoots": ["./node_modules/@types", "./src/types"], // THIS IS CRITICAL: ONLY node_modules/@types
     // "types": ["node", "express"], // <-- THIS LINE MUST BE DELETED or COMMENTED OUT
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
