@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000/api/notes';
+const BASE_URL = 'https://note-app-backend-vg9k.onrender.com/api/notes';
 
 export const noteService = {
     getNotes: (token: string) =>

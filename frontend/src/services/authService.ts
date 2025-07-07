@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = 'http://localhost:5000/api/auth';
+const API = 'https://note-app-backend-vg9k.onrender.com/api/auth';
 
 export const authService = {
     signup: (data: { name: string; email: string; dateOfBirth: string }) =>
