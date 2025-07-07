@@ -106,9 +106,7 @@ export default function Signup() {
                                 />
                                 <label
                                     htmlFor="name"
-                                    className="absolute left-4 top-2 text-gray-400 text-xs transition-all 
-                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400
-                  peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500"
+                                    className="absolute left-4 top-2 text-gray-400 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500"
                                 >
                                     Your Name
                                 </label>
@@ -164,9 +162,7 @@ export default function Signup() {
                                 />
                                 <label
                                     htmlFor="email"
-                                    className="absolute left-4 top-2 text-gray-400 text-xs transition-all 
-                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400
-                  peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500"
+                                    className="absolute left-4 top-2 text-gray-400 text-xs transition-all  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500"
                                 >
                                     Email
                                 </label>
@@ -187,9 +183,7 @@ export default function Signup() {
                                     />
                                     <label
                                         htmlFor="otp"
-                                        className="absolute left-4 top-2 text-gray-400 text-xs transition-all 
-                    peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400
-                    peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500"
+                                        className="absolute left-4 top-2 text-gray-400 text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500"
                                     >
                                         Enter OTP
                                     </label>
