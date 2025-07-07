@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { Eye, EyeOff } from 'lucide-react';
 
 interface SignupFormData {
     name: string;
@@ -16,6 +17,7 @@ interface SignupFormData {
 
 export default function Signup() {
     const [otpSent, setOtpSent] = useState(false);
+    const [showOtp, setShowOtp] = useState(false);
     const navigate = useNavigate();
     const {
         register,
@@ -176,7 +178,7 @@ export default function Signup() {
                                 <div className="relative">
                                     <input
                                         {...register('otp', { required: true })}
-                                        type="text"
+                                        type={showOtp ? 'text' : 'password'}
                                         placeholder=" "
                                         id="otp"
                                         className="peer w-full border border-gray-300 px-4 pt-5 pb-2 rounded-lg text-sm focus:outline-blue-500"
@@ -187,6 +189,13 @@ export default function Signup() {
                                     >
                                         Enter OTP
                                     </label>
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowOtp(!showOtp)}
+                                        className="absolute right-3 top-3 text-gray-500 hover:text-gray-800"
+                                    >
+                                        {showOtp ? <EyeOff size={18} /> : <Eye size={18} />}
+                                    </button>
                                     {errors.otp && (
                                         <p className="text-sm text-red-500">OTP is required</p>
                                     )}
