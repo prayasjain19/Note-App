@@ -46,7 +46,7 @@ export default function Signup() {
             const res = await authService.verifyOtp({ email: data.email, otp: data.otp! });
             localStorage.setItem('jwt_token', res.data.token);
             localStorage.setItem('user_email', res.data.email);
-            localStorage.setItem('user_name', res.data.email);
+            localStorage.setItem('user_name', res.data.name);
             toast.success('Signup successful!');
             navigate('/dashboard');
         } catch (err: any) {
@@ -59,6 +59,7 @@ export default function Signup() {
             const res = await authService.googleLogin({ token: credential });
             localStorage.setItem('jwt_token', res.data.token);
             localStorage.setItem('user_email', res.data.email);
+            localStorage.setItem('user_name', res.data.name);
             toast.success('Logged in with Google!');
             navigate('/dashboard');
         } catch (err: any) {
